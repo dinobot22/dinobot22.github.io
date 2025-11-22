@@ -41,7 +41,7 @@ const resumeData = {
         },
         bio: "I am Yabo Yin, a 2024 M.Sc. graduate in Computer Technology from <strong>Chongqing University of Technology</strong>, supervised by <a href=\"https://example.com/xiaofei-zhu\" target=\"_blank\" class=\"bio-link\">Professor Xiaofei Zhu</a>.",
         experience: "From 2023-04 to 2024-04, I was a visiting researcher at the <strong>Key Lab of Network Data Science and Technology, Institute of Computing Technology, Chinese Academy of Sciences</strong>, working on large language model applications.",
-        researchInterests: "Information Retrieval, Recommendation Systems, Natural Language Processing, and LLM applications (RAG, GraphRAG, Agents)"
+        researchInterests: "My research interests include <strong>Information Retrieval, Recommendation Systems, Natural Language Processing, and LLM applications (RAG, GraphRAG, Agents)</strong>."
     },
 
     // Competitions

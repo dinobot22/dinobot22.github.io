@@ -87,9 +87,7 @@ function renderPersonalInfo() {
 
     // Research Interests
     const researchContainer = document.getElementById('research-interests');
-    researchContainer.innerHTML = `
-        My research interests include <strong>${personal.researchInterests}</strong>.
-    `;
+    researchContainer.innerHTML = personal.researchInterests;
 }
 
 // Render competitions
