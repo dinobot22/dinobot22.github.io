@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yabo Yin - Personal Resume</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div id="page-container">
+        <div id="resume-page">
+            <!-- Header Section -->
+            <header id="header">
+                <div class="header-content">
+                    <div class="profile-image">
+                        <img id="profile-img" src="" alt="Profile Picture">
+                    </div>
+                    <div class="header-info">
+                        <h1 id="name"></h1>
+                        <div class="contact-info" id="contact-info"></div>
+                        <div class="supervisor" id="supervisor"></div>
+                        <div class="bio" id="bio"></div>
+                        <div class="research-interests" id="research-interests"></div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Competitions Section -->
+            <section id="competitions" class="section">
+                <h2 class="section-title">
+                    <i class="fas fa-trophy"></i> Competitions
+                </h2>
+                <div id="competitions-list" class="items-list"></div>
+            </section>
+
+            <!-- Publications Section -->
+            <section id="publications" class="section">
+                <h2 class="section-title">
+                    <i class="fas fa-file-alt"></i> Publications
+                </h2>
+                <div id="publications-list" class="items-list"></div>
+            </section>
+            <!-- Skills Section -->
+            <section id="skills" class="section">
+                <h2 class="section-title">
+                    <i class="fas fa-code"></i> Skills
+                </h2>
+                <div id="skills-list" class="skills-grid"></div>
+            </section>
+
+
+            <!-- Open Source Projects Section -->
+            <section id="open-source" class="section">
+                <h2 class="section-title">
+                    <i class="fas fa-rocket"></i> Open Source Projects
+                </h2>
+                <div id="open-source-list" class="items-list"></div>
+            </section>
+
+
+
+            <!-- Technical Articles Section -->
+            <section id="articles" class="section">
+                <h2 class="section-title">
+                    <i class="fas fa-blog"></i> Technical Articles
+                </h2>
+                <div id="articles-list" class="items-list"></div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Theme Toggle -->
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- Image Modal -->
+    <div id="image-modal" class="image-modal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">
+                <i class="fas fa-times"></i>
+            </button>
+            <img id="modal-image" src="" alt="">
+            <div class="modal-caption" id="modal-caption"></div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1261 @@
+/* ============================================
+   CSS Reset & Global Styles
+   ============================================ */
+
+/* Reset all default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* CSS Variables for Theme - Morandi Color Scheme */
+:root {
+    --bg-primary: #F5F2ED;         /* 莫兰迪米白色 */
+    --bg-secondary: #EBE8E3;       /* 莫兰迪浅灰米色 */
+    --text-primary: #2F2D2B;       /* 深灰棕色（加深对比度） */
+    --text-secondary: #6B6763;     /* 中灰色（加深对比度） */
+    --accent-color: #8FA9B3;       /* 雾霾蓝 */
+    --border-color: #D5CFC8;       /* 浅灰米色边框 */
+    --shadow: 0 0.2vw 0.8vw rgba(139, 134, 130, 0.15);
+    --hover-shadow: 0 0.4vw 1.6vw rgba(139, 134, 130, 0.25);
+    --card-bg: #F0EDE8;            /* 卡片背景 - 柔和米色 */
+    --badge-bg: #A8B5A0;           /* 灰绿色徽章 */
+    
+    /* 各模块专属莫兰迪色系 */
+    --color-competitions: #C4988F;   /* 豆沙粉 - 成就/奖项 */
+    --color-publications: #8FA9B3;   /* 雾霾蓝 - 学术/专业 */
+    --color-projects: #A8B5A0;       /* 灰绿色 - 开源/成长 */
+    --color-skills: #9B8B9E;         /* 灰紫色 - 技能/能力 */
+    --color-articles: #B8A692;       /* 灰驼色 - 知识/分享 */
+}
+
+/* Dark theme variables - Morandi Dark */
+[data-theme="dark"] {
+    --bg-primary: #3A3835;         /* 深灰棕色 */
+    --bg-secondary: #2E2C2A;       /* 更深的灰棕色 */
+    --text-primary: #F2EBE5;       /* 浅米色文字（增强对比度） */
+    --text-secondary: #BDB7B2;     /* 中灰色文字（增强对比度） */
+    --accent-color: #92ADB8;       /* 浅雾霾蓝 */
+    --border-color: #544F4B;       /* 中灰棕边框 */
+    --shadow: 0 0.2vw 0.8vw rgba(0, 0, 0, 0.4);
+    --hover-shadow: 0 0.4vw 1.6vw rgba(0, 0, 0, 0.5);
+    --card-bg: #423F3C;            /* 卡片背景 - 中灰棕 */
+    --badge-bg: #9BA89E;           /* 灰绿色徽章 */
+    
+    /* 各模块专属莫兰迪色系（暗色主题稍微调亮） */
+    --color-competitions: #D4A89F;   /* 浅豆沙粉 */
+    --color-publications: #9FB9C3;   /* 浅雾霾蓝 */
+    --color-projects: #B8C5B0;       /* 浅灰绿色 */
+    --color-skills: #AB9BAE;         /* 浅灰紫色 */
+    --color-articles: #C8B6A2;       /* 浅灰驼色 */
+}
+
+/* 暗色主题下的名次颜色 */
+[data-theme="dark"] .award-first {
+    color: #F9CA5E;         /* 稍微明亮的金黄色 */
+    font-weight: 700;
+}
+
+[data-theme="dark"] .award-second {
+    color: #8FB87C;         /* 柔和的浅绿色 */
+    font-weight: 700;
+}
+
+[data-theme="dark"] .award-third {
+    color: #E8A57F;         /* 柔和的浅橙铜色 */
+    font-weight: 700;
+}
+
+[data-theme="dark"] .award-other {
+    color: #C197D2;         /* 明亮的淡紫色 */
+    font-weight: 600;
+}
+
+/* ============================================
+   Full Screen / Edge-to-Edge Layout
+   ============================================ */
+
+html {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    width: 100vw;
+    min-height: 100vh;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ============================================
+   Page Container - Full Width, Zero Margins
+   ============================================ */
+
+#page-container {
+    width: 100vw;
+    min-height: 100vh;
+    background-color: var(--bg-secondary);
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+#resume-page {
+    width: 100vw;
+    min-height: 100vh;
+    background-color: var(--bg-primary);
+    padding: 4vw;
+    transition: all 0.3s ease;
+}
+
+/* ============================================
+   Header Section
+   ============================================ */
+
+#header {
+    margin-bottom: 2vw;
+    padding-bottom: 2vw;
+    border-bottom: 0.15vw solid var(--border-color);
+}
+
+.header-content {
+    display: flex;
+    gap: 3vw;
+    align-items: flex-start;
+}
+
+.profile-image {
+    flex-shrink: 0;
+    width: 20vw;
+    height: 20vw;
+    border-radius: 1vw;
+    overflow: hidden;
+    background-color: var(--bg-secondary);
+    border: 0.2vw solid var(--border-color);
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.header-info {
+    flex: 1;
+}
+
+#name {
+    font-size: 2.6vw;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5vw;
+}
+
+.contact-info {
+    display: flex;
+    gap: 2vw;
+    flex-wrap: wrap;
+    margin-bottom: 0.0vw;
+    margin-bottom: 0.4vw;
+}
+
+.contact-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6vw;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 1.1vw;
+    transition: color 0.3s ease;
+}
+
+.contact-item:hover {
+    color: var(--accent-color);
+}
+
+.contact-item i {
+    font-size: 1.3vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.supervisor {
+    margin-bottom: 0.6vw;
+    font-size: 1.2vw;
+    color: var(--text-primary);
+}
+
+.supervisor strong {
+    font-weight: 600;
+}
+
+.supervisor a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.supervisor a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+    transform: translateY(-0.1vw);
+}
+
+.bio {
+    margin-bottom: 0.5vw;
+    font-size: 1.1vw;
+    line-height: 1.2;
+    color: var(--text-primary);
+}
+
+.bio-link {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.bio-link:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+    transform: translateY(-0.1vw);
+}
+
+.bio p {
+    margin-top: 0.2vw;
+}
+
+.research-interests {
+    margin-top: 0vw;
+    font-size: 1.1vw;
+    line-height: 1.8;
+}
+
+.research-interests strong {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* ============================================
+   Section Styles
+   ============================================ */
+
+.section {
+    margin-bottom: 1.2vw;
+}
+
+/* Compact spacing for sections with toggle buttons */
+.section.has-toggle {
+    margin-bottom: 1.2vw; /* 保持与普通section相同的间距 */
+}
+
+/* 为toggle按钮本身添加间距 */
+.section-toggle-btn {
+    margin: 0.8vw auto 0.2vw auto;
+}
+
+/* 栏目间距控制类 */
+.section.compact-margin {
+    margin-top: 0.0vw !important; /* 有show more时的紧凑间距 */
+}
+
+.section.normal-margin {
+    margin-top: 4vw !important; /* 没有show more时的正常间距 */
+}
+
+.section-title {
+    font-size: 2.2vw;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.6vw;
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+    padding-bottom: 0.8vw;
+    border-bottom: 0.15vw solid var(--border-color);
+}
+
+.section-title i {
+    font-size: 2vw;
+}
+
+/* Competitions Section Color */
+#competitions .section-title i {
+    color: var(--color-competitions);
+}
+
+/* Publications Section Color */
+#publications .section-title i {
+    color: var(--color-publications);
+}
+
+/* Open Source Projects Section Color */
+#open-source .section-title i {
+    color: var(--color-projects);
+}
+
+/* Skills Section Color */
+#skills .section-title i {
+    color: var(--color-skills);
+}
+
+/* Technical Articles Section Color */
+#articles .section-title i {
+    color: var(--color-articles);
+}
+
+/* ============================================
+   Items List
+   ============================================ */
+
+.items-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6vw;
+}
+
+/* ============================================
+   Competition Item
+   ============================================ */
+
+.competition-item {
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+    padding: 1.26vw;
+    background-color: var(--card-bg);
+    border-radius: 0.8vw;
+    border-left: 0.3vw solid var(--color-competitions);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.competition-item:hover {
+    transform: translateX(0.5vw);
+    box-shadow: var(--hover-shadow);
+}
+
+.competition-content {
+    flex: 1;
+}
+
+.competition-header {
+    margin-bottom: 0.6vw;
+}
+
+.competition-title {
+    font-size: 1.4vw;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.5vw;
+    line-height: 1.4;
+}
+
+.competition-meta {
+    display: flex;
+    gap: 0.8vw;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 1vw;
+    color: var(--text-secondary);
+    margin-bottom: 0.5vw;
+    font-style: italic;
+}
+
+.competition-meta .award {
+    font-weight: 600;
+    font-size: 1.3vw;
+    font-style: italic;
+}
+
+/* 第1名 - 亮金色 */
+.competition-meta .award-first {
+    color: #EDA940;         /* 稍微明亮的金黄色 */
+    font-weight: 700;
+}
+
+/* 第2名 - 柔和绿色 */
+.competition-meta .award-second {
+    color: #7A9F6C;         /* 柔和的橄榄绿 */
+    font-weight: 700;
+}
+
+/* 第3名 - 柔和橙铜色 */
+.competition-meta .award-third {
+    color: #D8956F;         /* 柔和的橙铜色（避免与左边框豆沙粉重复） */
+    font-weight: 700;
+}
+
+/* 其他名次 - 亮紫色 */
+.competition-meta .award-other {
+    color: #9B8B9E;         /* 亮紫灰色 */
+    font-weight: 600;
+}
+
+.competition-description {
+    font-size: 1vw;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 0.5vw;
+}
+
+.competition-links {
+    display: flex;
+    gap: 0.8vw;
+    flex-wrap: wrap;
+}
+
+.link-item {
+    text-decoration: none;
+    color: var(--color-competitions);
+    font-size: 0.95vw;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.link-item:hover {
+    color: var(--text-primary);
+    opacity: 0.8;
+}
+
+.competition-image {
+    flex-shrink: 0;
+    width: 6vw;
+    height: 6vw;
+    border-radius: 0.6vw;
+    overflow: hidden;
+    background-color: var(--bg-primary);
+    border: 0.08vw solid var(--border-color);
+}
+
+.competition-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ============================================
+   Publication Item
+   ============================================ */
+
+.publication-item {
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+    padding: 1.26vw;
+    background-color: var(--card-bg);
+    border-radius: 0.8vw;
+    border-left: 0.3vw solid var(--color-publications);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.publication-item:hover {
+    transform: translateX(0.5vw);
+    box-shadow: var(--hover-shadow);
+}
+
+.publication-content {
+    flex: 1;
+}
+
+.publication-title {
+    font-size: 1.3vw;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.5vw;
+    line-height: 1.4;
+    position: relative;
+}
+
+.publication-title.has-abstract {
+    cursor: pointer;
+}
+
+/* Hover abstract tooltip */
+.publication-title.has-abstract::after {
+    content: attr(data-abstract);
+    position: absolute;
+    left: 0;
+    top: 100%;
+    margin-top: 0.5vw;
+    padding: 1.2vw 1.8vw;
+    background-color: var(--card-bg);
+    color: var(--text-primary);
+    border: 0.15vw solid var(--color-publications);
+    border-radius: 0.6vw;
+    font-size: 0.95vw;
+    font-weight: 400;
+    line-height: 1.6;
+    white-space: normal;
+    min-width: 45vw;
+    max-width: 60vw;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 100;
+    box-shadow: var(--hover-shadow);
+}
+
+.publication-title.has-abstract:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+.publication-venue {
+    color: var(--text-secondary);
+    margin-bottom: 0.5vw;
+    font-size: 1vw;
+    display: flex;
+    gap: 0.8vw;
+    align-items: center;
+    flex-wrap: wrap;
+    font-style: italic;
+}
+
+.publication-authors {
+    color: var(--text-secondary);
+    margin-bottom: 0.5vw;
+    font-size: 1vw;
+}
+
+
+.competition-meta .link-item {
+    font-style: italic;
+}
+
+.publication-venue .link-item {
+    color: var(--color-publications);
+    font-style: italic;
+}
+
+.publication-venue .link-item:hover {
+    color: var(--text-primary);
+    opacity: 0.8;
+}
+
+.publication-image {
+    flex-shrink: 0;
+    width: 6vw;
+    height: 6vw;
+    border-radius: 0.6vw;
+    overflow: hidden;
+    background-color: var(--bg-primary);
+    border: 0.08vw solid var(--border-color);
+}
+
+.publication-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ============================================
+   Open Source Projects
+   ============================================ */
+
+.project-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5vw;
+    padding: 1.26vw;
+    background-color: var(--card-bg);
+    border-radius: 0.8vw;
+    border-left: 0.3vw solid var(--color-projects);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.project-item:hover {
+    transform: translateX(0.5vw);
+    box-shadow: var(--hover-shadow);
+}
+
+.project-icon {
+    font-size: 3vw;
+    flex-shrink: 0;
+    width: 3vw;
+    height: 3vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-icon img {
+    width: 3vw;
+    height: 3vw;
+    max-width: 3vw;
+    max-height: 3vw;
+    object-fit: contain;
+}
+
+.project-content {
+    flex: 1;
+}
+
+.project-header {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+    margin-bottom: 0.5vw;
+    flex-wrap: wrap;
+}
+
+.project-title {
+    font-size: 1.4vw;
+    font-weight: 600;
+    color: var(--color-projects);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.project-title:hover {
+    color: var(--text-primary);
+}
+
+.project-role {
+    font-size: 0.75vw;
+    color: var(--color-projects);
+    padding: 0.15vw 0.45vw;
+    background-color: var(--bg-primary);
+    border-radius: 0.2vw;
+    border: 0.08vw solid var(--color-projects);
+    line-height: 1.3;
+}
+
+.project-badge {
+    position: absolute;
+    top: 1.2vw;
+    right: 1.2vw;
+    font-size: 0.8vw;
+    font-weight: 600;
+    color: var(--text-primary);
+    padding: 0.25vw 0.6vw;
+    background-color: var(--bg-primary);
+    border-radius: 0.4vw;
+    border: 0.08vw solid var(--border-color);
+    display: flex;
+    align-items: center;
+    gap: 0.25vw;
+    box-shadow: 0 0.1vw 0.3vw rgba(139, 134, 130, 0.1);
+    transition: all 0.3s ease;
+}
+
+.project-badge:hover {
+    transform: translateY(-0.1vw);
+    box-shadow: 0 0.2vw 0.5vw rgba(139, 134, 130, 0.2);
+}
+
+.project-badge i {
+    color: #EDA940;
+    font-size: 0.75vw;
+}
+
+/* Dark theme adjustments */
+[data-theme="dark"] .project-badge {
+    box-shadow: 0 0.1vw 0.3vw rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .project-badge:hover {
+    box-shadow: 0 0.2vw 0.5vw rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .project-badge i {
+    color: #F9CA5E;
+}
+
+.project-description {
+    font-size: 1vw;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 0.5vw;
+}
+
+.project-tags {
+    display: flex;
+    gap: 0.5vw;
+    flex-wrap: wrap;
+}
+
+.project-tag {
+    font-size: 0.75vw;
+    color: var(--color-projects);
+    padding: 0.15vw 0.45vw;
+    background-color: var(--bg-primary);
+    border-radius: 0.2vw;
+    border: 0.08vw solid var(--color-projects);
+    line-height: 1.3;
+}
+
+/* ============================================
+   Skills Grid
+   ============================================ */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15vw, 1fr));
+    gap: 1.5vw;
+    margin-bottom: 0vw; /* 与普通section间距保持一致 */
+}
+
+.skill-item {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+    padding: 0.84vw 1.5vw;
+    background-color: var(--card-bg);
+    border-radius: 0.6vw;
+    border-left: 0.15vw solid var(--color-skills);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-item:hover {
+    transform: translateX(0.5vw);
+    box-shadow: var(--hover-shadow);
+}
+
+.skill-icon {
+    width: 2.0vw;
+    height: 2.0vw;
+    font-size: 2vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.skill-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.skill-name {
+    font-size: 1.1vw;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+/* ============================================
+   Technical Articles
+   ============================================ */
+
+#articles-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6vw;
+}
+
+.article-item {
+    padding: 1.26vw;
+    background-color: var(--card-bg);
+    border-radius: 0.8vw;
+    border-left: 0.25vw solid var(--color-articles);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.article-item:hover {
+    transform: translateY(-0.3vw);
+    box-shadow: var(--hover-shadow);
+}
+
+.article-title-container {
+    display: flex;
+    align-items: center;
+    gap: 0.8vw;
+    margin-bottom: 0.5vw;
+}
+
+.article-title {
+    font-size: 1.4vw;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+    flex: 1;
+}
+
+.article-title-link {
+    color: var(--color-articles);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.article-title-link:hover {
+    color: var(--text-primary);
+}
+
+.article-platform-icon {
+    width: 1.8vw;
+    height: 1.8vw;
+    object-fit: contain;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0.8;
+}
+
+.article-platform-icon:hover {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.article-subtitle {
+    font-size: 1vw;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 0.5vw;
+}
+
+.article-tags-date-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1vw;
+}
+
+.article-tags {
+    display: flex;
+    gap: 0.6vw;
+    flex-wrap: wrap;
+    flex: 1;
+}
+
+.article-tag {
+    font-size: 0.75vw;
+    color: var(--color-articles);
+    padding: 0.15vw 0.45vw;
+    background-color: var(--bg-primary);
+    border-radius: 0.2vw;
+    border: 0.08vw solid var(--color-articles);
+}
+
+.article-date {
+    font-size: 0.9vw;
+    color: var(--text-secondary);
+    white-space: nowrap;
+}
+
+.article-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9vw;
+    color: var(--text-secondary);
+}
+
+/* ============================================
+   Theme Toggle Button
+   ============================================ */
+
+.theme-toggle {
+    position: fixed;
+    top: 1.5vw;
+    right: 1.5vw;
+    width: 3.5vw;
+    height: 3.5vw;
+    border-radius: 50%;
+    background-color: var(--bg-primary);
+    border: 0.15vw solid var(--border-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5vw;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+    z-index: 1000;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: var(--hover-shadow);
+}
+
+/* ============================================
+   Responsive Adjustments (for very small screens)
+   ============================================ */
+
+@media screen and (max-width: 768px) {
+    #resume-page {
+        padding: 6vw 4vw;
+    }
+    
+    .header-content {
+        flex-direction: row; /* 保持横向布局 */
+        align-items: flex-start;
+        gap: 2vw; /* 缩小间距 */
+    }
+    
+    .profile-image {
+        width: 25vw; /* 缩小图片尺寸 */
+        height: 25vw;
+    }
+    
+    #name {
+        font-size: 4.5vw;
+    }
+    
+    .contact-item {
+        font-size: 2vw;
+    }
+    
+    .contact-item i {
+        font-size: 2.2vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 1;
+    }
+    
+    .supervisor {
+        font-size: 2vw;
+    }
+    
+    .bio {
+        font-size: 2vw;
+    }
+    
+    .research-interests {
+        font-size: 2vw;
+    }
+    
+    .section-title {
+        font-size: 4vw;
+    }
+    
+    .skills-grid {
+        grid-template-columns: repeat(auto-fill, minmax(40vw, 1fr));
+    }
+    
+    #articles-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================
+   Image Modal/Lightbox
+   ============================================ */
+
+.image-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.image-modal.active {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+}
+
+.modal-content {
+    position: relative;
+    margin: auto;
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 2001;
+}
+
+#modal-image {
+    max-width: 100%;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 1vw;
+    box-shadow: 0 1vw 3vw rgba(0, 0, 0, 0.5);
+    background-color: var(--bg-primary);
+}
+
+.modal-caption {
+    margin-top: 1.5vw;
+    padding: 1vw 2vw;
+    background-color: var(--card-bg);
+    border-radius: 0.6vw;
+    color: var(--text-primary);
+    font-size: 1.2vw;
+    max-width: 80vw;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+.modal-close {
+    position: absolute;
+    top: -4vw;
+    right: 0;
+    width: 3.5vw;
+    height: 3.5vw;
+    border-radius: 50%;
+    background-color: var(--bg-primary);
+    border: 0.15vw solid var(--border-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5vw;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+}
+
+.modal-close:hover {
+    transform: scale(1.1) rotate(90deg);
+    box-shadow: var(--hover-shadow);
+}
+
+/* Make images clickable */
+.competition-image img,
+.publication-image img {
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.competition-image img:hover,
+.publication-image img:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+/* ============================================
+   Section Toggle Button (Collapsible Sections)
+   ============================================ */
+
+.section-toggle-btn {
+    display: flex;
+    margin: 0.8vw auto 0.2vw auto;
+    padding: 0.8vw 1.6vw;
+    background-color: transparent;
+    color: var(--text-secondary);
+    border: 0.15vw solid var(--border-color);
+    border-radius: 0.8vw;
+    font-size: 1vw;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+    align-items: center;
+    justify-content: center;
+    gap: 0.6vw;
+    width: fit-content;
+    position: relative;
+    overflow: hidden;
+}
+
+.section-toggle-btn:hover {
+    transform: translateY(-0.15vw);
+    box-shadow: var(--hover-shadow);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+.section-toggle-btn:active {
+    transform: translateY(0);
+}
+
+.section-toggle-btn i {
+    font-size: 0.9vw;
+    transition: transform 0.3s ease;
+    opacity: 0.8;
+}
+
+.section-toggle-btn .toggle-count {
+    font-weight: 600;
+    font-size: 0.9vw;
+}
+
+/* Section-specific colors */
+.section-toggle-competitions {
+    border-color: var(--color-competitions);
+    color: var(--color-competitions);
+}
+
+.section-toggle-competitions:hover {
+    background-color: var(--color-competitions);
+    color: var(--bg-primary);
+    border-color: var(--color-competitions);
+}
+
+.section-toggle-publications {
+    border-color: var(--color-publications);
+    color: var(--color-publications);
+}
+
+.section-toggle-publications:hover {
+    background-color: var(--color-publications);
+    color: var(--bg-primary);
+    border-color: var(--color-publications);
+}
+
+.section-toggle-projects {
+    border-color: var(--color-projects);
+    color: var(--color-projects);
+}
+
+.section-toggle-projects:hover {
+    background-color: var(--color-projects);
+    color: var(--bg-primary);
+    border-color: var(--color-projects);
+}
+
+.section-toggle-articles {
+    border-color: var(--color-articles);
+    color: var(--color-articles);
+}
+
+.section-toggle-articles:hover {
+    background-color: var(--color-articles);
+    color: var(--bg-primary);
+    border-color: var(--color-articles);
+}
+
+/* Items visibility control */
+.items-list > .hidden {
+    display: none;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease, max-height 0.3s ease;
+}
+
+.items-list > .visible {
+    display: flex;
+    opacity: 1;
+    max-height: none;
+    animation: fadeInSlide 0.4s ease forwards;
+}
+
+/* Special handling for grid layouts to prevent layout shifts */
+#articles-list > .hidden {
+    display: none !important;
+}
+
+#articles-list > .visible {
+    display: block !important;
+    animation: fadeInSlide 0.4s ease forwards;
+}
+
+@keyframes fadeInSlide {
+    from {
+        opacity: 0;
+        transform: translateY(-1vw);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Clear float after toggle button */
+.section {
+    overflow: hidden;
+}
+
+
+
+/* Responsive adjustments for toggle button */
+@media screen and (max-width: 768px) {
+    .section-toggle-btn {
+        font-size: 2.2vw;
+        padding: 1.2vw 2.5vw;
+        border-radius: 1.2vw;
+        margin: 1.5vw auto 0 auto;
+        gap: 0.8vw;
+    }
+    
+    .section-toggle-btn i {
+        font-size: 1.8vw;
+    }
+    
+    .section-toggle-btn .toggle-count {
+        font-size: 2.2vw;
+    }
+}
+
+/* Print styles - hide toggle buttons when printing */
+@media print {
+    .section-toggle-btn {
+        display: none !important;
+    }
+    
+    .items-list > .hidden {
+        display: flex !important;
+        opacity: 1 !important;
+        max-height: none !important;
+    }
+}
+
+/* ============================================
+   Print Styles
+   ============================================ */
+
+@media print {
+    body {
+        background-color: white;
+    }
+    
+    #page-container {
+        padding: 0;
+    }
+    
+    #resume-page {
+        padding: 2vw 4vw;
+    }
+    
+    .theme-toggle {
+        display: none;
+    }
+    
+    .image-modal {
+        display: none !important;
+    }
+    
+    .competition-item:hover,
+    .publication-item:hover,
+    .project-item:hover,
+    .skill-item:hover,
+    .article-item:hover {
+        transform: none;
+        box-shadow: none;
+    }
+}
+
+/* Responsive adjustments for modal */
+@media screen and (max-width: 768px) {
+    .modal-close {
+        top: -5vw;
+        width: 5vw;
+        height: 5vw;
+        font-size: 2.5vw;
+    }
+    
+    .modal-caption {
+        font-size: 2.5vw;
+        padding: 2vw 3vw;
+    }
+}
