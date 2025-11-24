@@ -459,9 +459,27 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.publication-item {
+    /* 原有代码保持不变 */
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+    padding: 1.26vw;
+    background-color: var(--card-bg);
+    border-radius: 0.8vw;
+    border-left: 0.3vw solid var(--color-publications);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    /* 新增：确保定位上下文，以便 z-index 生效 */
+    position: relative; 
+    z-index: 1; 
+}
+
 .publication-item:hover {
     transform: translateX(0.5vw);
     box-shadow: var(--hover-shadow);
+    /* 新增：悬停时极大提升层级，使其浮动在所有兄弟元素之上 */
+    z-index: 1000; 
 }
 
 .publication-content {
