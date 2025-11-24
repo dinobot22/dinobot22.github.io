@@ -949,7 +949,10 @@ body {
     .section-title {
         font-size: 4vw;
     }
-    
+    /* [新增] 修复图标过小的问题 */
+    .section-title i {
+        font-size: 3.8vw; /* 将图标调整为接近文字大小 (推荐 3.6vw - 4.0vw) */
+    }
     .skills-grid {
         grid-template-columns: repeat(auto-fill, minmax(40vw, 1fr));
     }
