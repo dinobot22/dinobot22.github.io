@@ -55,7 +55,7 @@ const resumeData = {
             links: [
                 { text: "Slide", url: "assets/competitions/cikm-2025/slides/cikm-2025-slide.pdf" },
                 { text: "Report", url: "https://arxiv.org/pdf/2510.21671" },
-                { text: "Certificate", url: "assets/documents/certificates/cikm-2025-certificate.png" }
+                { text: "Certificate", url: "assets/competitions/cikm-2025/certificates/cikm-2025-certificate.png" }
             ],
             image: "assets/competitions/cikm-2025/images/cikm-2025.png"
 
