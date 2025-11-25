@@ -81,7 +81,7 @@ function renderPersonalInfo() {
     if (personal.experience) {
         const experienceP = document.createElement('p');
         experienceP.innerHTML = personal.experience;
-        experienceP.style.marginTop = '12px';
+
         bioContainer.appendChild(experienceP);
     }
 

@@ -125,19 +125,25 @@ body {
 }
 
 .header-content {
-    display: flex;
-    gap: 3vw;
-    align-items: flex-start;
+    display: block;
+}
+
+.header-content::after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 .profile-image {
-    flex-shrink: 0;
+    float: left;
     width: 20vw;
     height: 20vw;
     border-radius: 1vw;
     overflow: hidden;
     background-color: var(--bg-secondary);
     border: 0.2vw solid var(--border-color);
+    margin-right: 3vw;
+    margin-bottom: 1vw;
 }
 
 .profile-image img {
@@ -146,9 +152,7 @@ body {
     object-fit: cover;
 }
 
-.header-info {
-    flex: 1;
-}
+
 
 #name {
     font-size: 2.6vw;
@@ -211,7 +215,7 @@ body {
 }
 
 .bio {
-    margin-bottom: 0.5vw;
+    margin-bottom: 0.8vw;
     font-size: 1.1vw;
     line-height: 1.2;
     color: var(--text-primary);
@@ -231,11 +235,11 @@ body {
 }
 
 .bio p {
-    margin-top: 0.2vw;
+    margin-top: 0.8vw;
 }
 
 .research-interests {
-    margin-top: 0vw;
+    margin-top: 0.8vw;
     font-size: 1.1vw;
     line-height: 1.8;
 }
@@ -908,12 +912,11 @@ body {
     }
     
     .header-content {
-        flex-direction: row; /* 保持横向布局 */
-        align-items: flex-start;
-        gap: 2vw; /* 缩小间距 */
+        display: block;
     }
-    
+
     .profile-image {
+        margin-right: 2vw;
         width: 25vw; /* 缩小图片尺寸 */
         height: 25vw;
     }
@@ -939,11 +942,17 @@ body {
     }
     
     .bio {
-        font-size: 2vw;
+        font-size: 2.2vw;
+        margin-bottom: 2vw;
     }
     
+    .bio p {
+        margin-top: 2vw;
+    }
+
     .research-interests {
-        font-size: 2vw;
+        font-size: 2.2vw;
+        margin-top: 2vw;
     }
     
     .section-title {
