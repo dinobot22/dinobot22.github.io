@@ -86,7 +86,7 @@ const resumeData = {
                 { text: "Link", url: "" },
                 { text: "Code", url: "" }
             ],
-            image: "assets/competitions/cikm-2025/images/cikm-2025-alt.png"
+            image: "assets/competitions/cikm-2025/images/cikm-2025.png"
         },
         {
             title: "CMC-GCN: Consistent Multi-Granularity Cascading Graph Convolution Network for Multi-Behavior Recommendation",
